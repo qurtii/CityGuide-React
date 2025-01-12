@@ -2,16 +2,28 @@ import { Footer } from "./footer";
 import { Header } from "./header";
 
 import styles from "../styles/attractions.module.scss";
+import { useRef } from "react";
 
 
 export function Attractions(){
+    
+    const openFunks = useRef(null)
+
+    const openMenu = () => {
+        if (openFunks.current.classList.contains(styles.closedList)) {
+            openFunks.current.classList.remove(styles.closedList);
+        } else {
+            openFunks.current.classList.add(styles.closedList);
+        }
+    }
+
 
     return(
         <>
             <Header />
             <section className={styles.second}>
                 {/* className -> buttons_slider*/}
-                <p className={styles.second__back}>&larr;</p>
+                <p className={styles.second__back }>&larr;</p>
                 <div className={styles.container} id="secondContainer">
                     <div className={styles.second__functional}>
                         <div className={styles.second__functionalHeader}>
@@ -19,10 +31,9 @@ export function Attractions(){
                                 <input type="text" className={styles.second__functionalInput} id="search" placeholder="Поиск"/>
                                 <p className={styles.second__functionalClear}>&#10006;</p>
                             </div>
-                            <img src="/sort.svg" alt="img" className={styles.second__functionalSort}/>
+                            <img onClick={openMenu} src="/sort.svg" alt="img" className={styles.second__functionalSort}/>
                         </div>
-                        {/* classe second__functional-list-close */}
-                        <div className={styles.second__functionalList}>
+                        <div ref={openFunks} className={`${styles.second__functionalList} ${styles.closedList}` }>
                             <p className={styles.second__functionalTitle}>Сортировка</p>
                             <div className={styles.second__functionalSorting}>
                                 <div className={styles.second__functionalSorting1}>

@@ -177,7 +177,7 @@ li {
     gap: 10px;
   }
 }
-.second__functionalSorting__functionalSorting1 {
+.second__functionalSorting1 {
   display: flex;
   background-color: #eeece7;
   padding: 4px 6px;
@@ -189,31 +189,26 @@ li {
           user-select: none;
 }
 @media (max-width: 930px) {
-  .second__functionalSorting__functionalSorting1 {
+  .second__functionalSorting1 {
     font-size: 18px;
   }
 }
 @media (max-width: 800px) {
-  .second__functionalSorting__functionalSorting1 {
+  .second__functionalSorting1 {
     font-size: 16.5px;
   }
 }
 @media (max-width: 520px) {
-  .second__functionalSorting__functionalSorting1 {
+  .second__functionalSorting1 {
     font-size: 15.5px;
   }
 }
 @media (max-width: 350px) {
-  .second__functionalSorting__functionalSorting1 {
+  .second__functionalSorting1 {
     font-size: 14px;
   }
 }
-.second__functionalSorting_close {
-  cursor: pointer;
-  display: none;
-  font-size: 11px;
-}
-.second__functionalSorting__functionalSorting2 {
+.second__functionalSorting2 {
   display: flex;
   background-color: #eeece7;
   padding: 3px 5px;
@@ -224,7 +219,7 @@ li {
      -moz-user-select: none;
           user-select: none;
 }
-.second__functionalSorting__functionalSorting3 {
+.second__functionalSorting3 {
   display: flex;
   background-color: #eeece7;
   padding: 3px 5px;
@@ -600,4 +595,12 @@ li {
 .second__pagination-link:hover {
   background-color: #ececec;
   transition: all 0.2s ease;
+}
+
+.closedList {
+  max-height: 0;
+}
+
+.openedList {
+  max-height: 192px;
 }

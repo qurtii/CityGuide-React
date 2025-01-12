@@ -69,7 +69,12 @@ export function Contact() {
                     </div>
 
                     <div className={styles.main__mapBlock}>
-                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9a8c464c0761f0ec82a61f0352df0dec50f76fc5049b95a2438ce5308582b6a1&amp;width=650&amp;height=485&amp;lang=ru_RU&amp;scroll=true"></script>
+                        <iframe 
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A9a8c464c0761f0ec82a61f0352df0dec50f76fc5049b95a2438ce5308582b6a1&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"
+                            frameBorder="0"
+                            width="100%"
+                            height="100%"    
+                        />
                     </div>
                 </div>
             </div>

@@ -24,8 +24,7 @@ export function Home() {
       <div className={styles.second}>
         <div className={styles.container}>
           <div className={styles.second__title}>О Москве</div>
-                              {/* добавить класс animation */}
-          <div className={styles.second__wrap}> 
+          <div className={`${styles.second__wrap} ${styles.animation}`}> 
             <div className={styles.second__text}>
               <div className={styles.second__subtitle_one}>
                 Москва - столица России и крупнейший город страны. Это огромный
@@ -40,8 +39,14 @@ export function Home() {
               </div>
             </div>
             {/* class map-1 */}
-            <div className={styles.second__map}>
-              <script type="text/javascript" charSet="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7a7ab50649f04b6106317791ec90613d4301d4191c67b57634649fb26b6fd2f5&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+            <div className={`${styles.second__map} ${styles.map1}`}>
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A7a7ab50649f04b6106317791ec90613d4301d4191c67b57634649fb26b6fd2f5&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="Yandex Map"
+              />
             </div>
           </div>
         </div>
