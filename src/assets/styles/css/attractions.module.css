@@ -1,21 +1,21 @@
 @font-face {
   font-family: Montserrat;
-  src: url("../../fonts/Montserrat-Bold.ttf");
+  src: url("../fonts/Montserrat-Bold.ttf");
   font-weight: 700;
 }
 @font-face {
   font-family: Montserrat;
-  src: url("../../fonts/Montserrat-Regular.ttf");
+  src: url("../fonts/Montserrat-Regular.ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: Montserrat;
-  src: url("../../fonts/Montserrat-Medium.ttf");
+  src: url("../fonts/Montserrat-Medium.ttf");
   font-weight: 500;
 }
 @font-face {
   font-family: Montserrat;
-  src: url("../../fonts/Montserrat-SemiBold.ttf");
+  src: url("../fonts/Montserrat-SemiBold.ttf");
   font-weight: 600;
 }
 * {
@@ -333,6 +333,7 @@ li {
   }
 }
 .second__page {
+  width: 990px;
   animation: showPage 0.8s;
   animation-iteration-count: 1;
 }
@@ -344,100 +345,100 @@ li {
     opacity: 1;
   }
 }
-.second__card-list {
+.second__cardList {
   display: grid;
   grid-template-columns: 480px 480px;
   gap: 30px;
 }
 @media (max-width: 1050px) {
-  .second__card-list {
+  .second__cardList {
     grid-template-columns: 400px 400px;
     gap: 20px;
   }
 }
 @media (max-width: 935px) {
-  .second__card-list {
+  .second__cardList {
     grid-template-columns: 350px 350px;
     gap: 20px;
   }
 }
 @media (max-width: 800px) {
-  .second__card-list {
+  .second__cardList {
     grid-template-columns: 310px 310px;
     gap: 15px;
   }
 }
 @media (max-width: 750px) {
-  .second__card-list {
+  .second__cardList {
     grid-template-columns: 280px 280px;
   }
 }
 @media (max-width: 540px) {
-  .second__card-list {
+  .second__cardList {
     grid-template-columns: 230px 240px;
     gap: 10px;
   }
 }
 @media (max-width: 520px) {
-  .second__card-list {
+  .second__cardList {
     display: flex;
     flex-direction: column;
   }
 }
-.second__card-img {
+.second__cardImg {
   cursor: pointer;
   max-height: 290px;
   max-width: 480px;
 }
 @media (max-width: 1050px) {
-  .second__card-img {
+  .second__cardImg {
     max-width: 380px;
     max-height: 230px;
   }
 }
 @media (max-width: 935px) {
-  .second__card-img {
+  .second__cardImg {
     max-width: 350px;
     max-height: 210px;
   }
 }
 @media (max-width: 800px) {
-  .second__card-img {
+  .second__cardImg {
     max-width: 285px;
     max-height: 185px;
   }
 }
 @media (max-width: 650px) {
-  .second__card-img {
+  .second__cardImg {
     max-width: 255px;
     max-height: 155px;
   }
 }
 @media (max-width: 540px) {
-  .second__card-img {
+  .second__cardImg {
     max-width: 230px;
     max-height: 175px;
   }
 }
 @media (max-width: 520px) {
-  .second__card-img {
+  .second__cardImg {
     max-height: 190px;
     max-width: 315px;
   }
 }
 @media (max-width: 405px) {
-  .second__card-img {
+  .second__cardImg {
     max-height: 150px;
     max-width: 275px;
   }
 }
 @media (max-width: 350px) {
-  .second__card-img {
+  .second__cardImg {
     max-height: 135px;
     max-width: 230px;
   }
 }
-.second__card-title {
+.second__cardTitle {
   font-family: Montserrat;
   font-size: 23px;
   font-weight: 600;
@@ -447,23 +448,23 @@ li {
   padding: 0px 0px 10px 15px;
 }
 @media (max-width: 1050px) {
-  .second__card-title {
+  .second__cardTitle {
     font-size: 20px;
   }
 }
 @media (max-width: 800px) {
-  .second__card-title {
+  .second__cardTitle {
     font-size: 18px;
     max-width: 200px;
   }
 }
 @media (max-width: 520px) {
-  .second__card-title {
+  .second__cardTitle {
     max-width: unset;
   }
 }
 @media (max-width: 405px) {
-  .second__card-title {
+  .second__cardTitle {
     max-width: 200px;
     font-size: 16px;
   }
@@ -603,4 +604,37 @@ li {
 
 .openedList {
   max-height: 192px;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #000000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loaderDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fetchError {
+  text-align: center;
+  font-size: 18px;
 }

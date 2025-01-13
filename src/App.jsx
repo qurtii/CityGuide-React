@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { Home } from "./assets/componets/home.jsx";
 import { Attractions } from "./assets/componets/attractions.jsx";
 import { Contact } from "./assets/componets/contact.jsx";
+import { Showplace } from "./assets/componets/showPlace.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/attractions" element={<Attractions />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/attractions/id" element={<Showplace />} />
       </Routes>
     </BrowserRouter>
   );

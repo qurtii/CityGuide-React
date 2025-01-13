@@ -1,23 +1,23 @@
 @font-face{
   font-family: Montserrat;
-  src: url('../../fonts/Montserrat-Bold.ttf');
+  src: url('../fonts/Montserrat-Bold.ttf');
   font-weight: 700;
 }
 
 @font-face{
   font-family: Montserrat;
-  src: url('../../fonts/Montserrat-Regular.ttf');
+  src: url('../fonts/Montserrat-Regular.ttf');
   font-weight: 400;
 }
 
 @font-face{
   font-family: Montserrat;
-  src: url('../../fonts/Montserrat-Medium.ttf');
+  src: url('../fonts/Montserrat-Medium.ttf');
   font-weight: 500;
 }
 @font-face{
   font-family: Montserrat;
-  src: url('../../fonts/Montserrat-SemiBold.ttf');
+  src: url('../fonts/Montserrat-SemiBold.ttf');
   font-weight: 600;
 }
 
@@ -316,6 +316,7 @@ li{
   }
 
   &__page {
+    width: 990px;
     animation: showPage 0.8s;
     animation-iteration-count: 1;
 
@@ -330,7 +331,7 @@ li{
     }
   }
 
-  &__card-list {
+  &__cardList {
     display: grid;
     grid-template-columns: 480px 480px;
     gap: 30px;
@@ -374,7 +375,7 @@ li{
     }
   }
 
-  &__card-img {
+  &__cardImg {
     cursor: pointer;
     max-height: 290px;
     max-width: 480px;
@@ -417,7 +418,7 @@ li{
       max-width: 230px;
     }
   }
-  &__card-title{
+  &__cardTitle{
     font-family: Montserrat;
     font-size: 23px;
     font-weight: 600;
@@ -585,4 +586,41 @@ li{
 
 .openedList{
   max-height: 192px;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #000000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.loaderDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.fetchError{
+  margin: 100px 0;
+  text-align: center;
+  font-size: 19.5px;
+  font-weight: 600px;
 }

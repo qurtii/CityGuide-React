@@ -3,9 +3,71 @@ import { Link } from "react-router-dom";
 import { Footer } from "./footer";
 
 import styles from "../styles/home.module.scss";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+
+import redSquare from "../img/краснаяплощадь.png";
+import cableway from "../img/канатнаядорога.png";
+import vdnkh from "../img/вднх.png";
+import alexanderGarden from "../img/александсад.png";
+import oceanarium from "../img/океанариум.png";
+import moscowCity from "../img/москва сити.png";
+import gum from "../img/гум.png";
+import zaryadyePark from "../img/парк зарядье.png";
 
 export function Home() {
+  const slideIndex = useRef(1);
+  const slides = useRef(null);
+
+  useEffect(() => {
+    if (!slides.current) return;
+
+    const slideElements = Array.from(slides.current.children);
+
+    function showSlides(n) {
+      if (n > slideElements.length) {
+        slideIndex.current = 1;
+      }
+      if (n < 1) {
+        slideIndex.current = slideElements.length;
+      }
+
+      for (let slide of slideElements) {
+        slide.style.display = "none";
+      }
+
+      slideElements[slideIndex.current - 1].style.display = "block";
+    }
+
+    function nextSlide() {
+      showSlides((slideIndex.current += 1));
+    }
+
+    function previousSlide() {
+      showSlides((slideIndex.current -= 1));
+    }
+
+    showSlides(slideIndex.current);
+
+    const nextButton = document.querySelector(
+      `.${styles.third__sliderBtn}.next`,
+    );
+    const prevButton = document.querySelector(
+      `.${styles.third__sliderBtn}.prev`,
+    );
+
+    if (nextButton && prevButton) {
+      nextButton.addEventListener("click", nextSlide);
+      prevButton.addEventListener("click", previousSlide);
+    }
+
+    return () => {
+      if (nextButton && prevButton) {
+        nextButton.removeEventListener("click", nextSlide);
+        prevButton.removeEventListener("click", previousSlide);
+      }
+    };
+  }, []);
+
   return (
     <>
       <Header />
@@ -69,60 +131,56 @@ export function Home() {
             {/* class animation */}
             <div className={styles.third__slider}>
               {/* class third__slider-btn  third__sliderPrevious*/}
-              <a className={styles.third__sliderBtn}>&#10094;</a>
-              <div className={styles.third__slider_row}>
+              <a className={`${styles.third__sliderBtn} prev`}>&#10094;</a>
+              <div ref={slides} className={styles.third__slider_row}>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/краснаяплощадь.png"
+                    src={redSquare}
                     alt="img"
                     className={styles.third__cardImg}
                   />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/канатнаядорога.png"
+                    src={cableway}
                     alt="img"
                     className={styles.third__cardImg}
                   />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/вднх.png"
+                    src={vdnkh}
                     alt="img"
                     className={styles.third__cardImg}
                   />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/александсад.png"
+                    src={alexanderGarden}
                     alt="img"
                     className={styles.third__cardImg}
                   />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/океанариум.png"
+                    src={oceanarium}
                     alt="img"
                     className={styles.third__cardImg}
                   />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/москва сити.png"
+                    src={moscowCity}
                     alt="img"
                     className={styles.third__cardImg}
                   />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
-                  <img
-                    src="../../../public/гум.png"
-                    alt="img"
-                    className={styles.third__cardImg}
-                  />
+                  <img src={gum} alt="img" className={styles.third__cardImg} />
                 </Link>
                 <Link to="/attractions" className={styles.third__cardLink}>
                   <img
-                    src="../../../public/парк зарядье.png"
+                    src={zaryadyePark}
                     alt="img"
                     className={styles.third__cardImg}
                   />
@@ -130,14 +188,12 @@ export function Home() {
               </div>
 
               {/* styles.third__slider-next */}
-              <a className={styles.third__sliderBtn}>&#10095;</a>
+              <a className={`${styles.third__sliderBtn} next`}>&#10095;</a>
             </div>
           </div>
-          <div>
-            <Link className={styles.third__btn} to="/attractions">
-              Подробнее
-            </Link>
-          </div>
+          <Link className={styles.third__btn} to="/attractions">
+            Подробнее
+          </Link>
         </div>
       </div>
 

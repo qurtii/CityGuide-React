@@ -1,41 +1,18 @@
 import logo from "../img/header_logo.svg";
 import burger from "../img/burger.svg";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import styles from "../styles/header.module.scss";
-import { useEffect, useRef, useState } from "react";
+import styles from "../styles/attractions.module.scss";
 
-export function Header() {
-  const location = useLocation();
-  const [backgroundColor, setBackgroundColor] = useState("#000");
-  const [homeDisplay, setHomeDisplay] = useState("none");
-  const [visitDisplay, setVisitDisplay] = useState("block");
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setBackgroundColor("rgba(0, 0, 0, 0.66)");
-      setHomeDisplay("none");
-      setVisitDisplay("block");
-    } else {
-      setBackgroundColor("#111111");
-      setHomeDisplay("block");
-      setVisitDisplay("none");
-    }
-  }, [location.pathname]);
-
+export function ProgressHeader() {
   return (
     <>
-      <header style={{ backgroundColor }} className={styles.header}>
+      <header className={styles.header}>
         <div className={styles.container}>
           <nav className={styles.header__nav}>
             <Link to="/">
-              {" "}
-              <img
-                src={logo}
-                alt="logo"
-                className={styles.header__navLogo}
-              />{" "}
+              <img src={logo} alt="logo" className={styles.header__navLogo} />
             </Link>
             <div className={styles.header__burger} id="open_burger">
               <img src={burger} alt="burger" />
@@ -47,17 +24,8 @@ export function Header() {
                   КОНТАКТЫ
                 </Link>
               </li>
-              <li style={{ display: homeDisplay }}>
-                <Link to="/" className={styles.header__li}>
-                  ГЛАВНАЯ
-                </Link>
-              </li>
               <li>
-                <Link
-                  style={{ display: visitDisplay }}
-                  to="/attractions"
-                  className={styles.header__liBtn}
-                >
+                <Link to="/attractions" className={styles.header__liBtn}>
                   ЧТО ПОСЕТИТЬ
                 </Link>
               </li>
@@ -81,6 +49,11 @@ export function Header() {
             </div>
           </nav>
         </div>
+        <progress
+          value="0"
+          max="100"
+          className={styles.header__readBar}
+        ></progress>
       </header>
     </>
   );

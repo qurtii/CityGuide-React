@@ -3,6 +3,10 @@ import { Footer } from "./footer";
 
 import styles from "../styles/contact.module.scss";
 
+import tgIcon from "../img/tg.png";
+import vkIcon from "../img/vk.svg";
+import ytIcon from "../img/youtube.svg";
+
 export function Contact() {
   return (
     <>
@@ -114,25 +118,17 @@ export function Contact() {
           <div className={styles.second__title}>Наши соцсети</div>
           <div className={styles.second__row}>
             <a href="https://vk.com/join">
-              <img src="/vk.svg" alt="icon" className={styles.second__icon1} />
+              <img src={vkIcon} alt="icon" className={styles.second__icon1} />
             </a>
 
             <div className="second__icon2-block">
               <a href="https://web.telegram.org/">
-                <img
-                  src="/tg.png"
-                  alt="icon"
-                  className={styles.second__icon2}
-                />
+                <img src={tgIcon} alt="icon" className={styles.second__icon2} />
               </a>
             </div>
 
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-              <img
-                src="/youtube.svg"
-                alt="icon"
-                className={styles.second__icon3}
-              />
+              <img src={ytIcon} alt="icon" className={styles.second__icon3} />
             </a>
           </div>
         </div>

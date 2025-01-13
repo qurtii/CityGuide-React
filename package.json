@@ -13,15 +13,19 @@
     "ass": "^1.83.1"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-router-dom": "^7.1.1",
-    "ass": "^1.83.1"
+    "@tanstack/react-query": "^5.64.0",
+    "@tanstack/react-query-devtools": "^5.64.0",
+    "axios": "^1.7.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@tanstack/eslint-plugin-query": "^5.62.16",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react-swспш": "^3.5.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
@@ -31,7 +35,9 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "sass-embedded": "^1.83.1",
+    "vite": "^6.0.7"
   },
   "eslintConfig": {
     "root": true,

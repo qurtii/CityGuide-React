@@ -1,12 +1,22 @@
 import { Footer } from "./footer";
-import { Header } from "./header";
+import { Header } from "./header.jsx";
 
 import styles from "../styles/attractions.module.scss";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import sortIcon from "../img/sort.svg";
+import { Link, useLocation } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { usePosts } from "../hooks/usePosts.js";
+
+const isAuth = true
 
 export function Attractions() {
-  const openFunks = useRef(null);
 
+  const { data, error, isLoading, isError, isSuccess } = usePosts(isAuth)
+
+  const openFunks = useRef(null);
   const openMenu = () => {
     if (openFunks.current.classList.contains(styles.closedList)) {
       openFunks.current.classList.remove(styles.closedList);
@@ -35,7 +45,7 @@ export function Attractions() {
               </div>
               <img
                 onClick={openMenu}
-                src="/sort.svg"
+                src={sortIcon}
                 alt="img"
                 className={styles.second__functionalSort}
               />
@@ -78,7 +88,26 @@ export function Attractions() {
               ></div>
             </div>
           </div>
-          <div className={styles.second__page} id="page"></div>
+
+          <p style={{ display: isError ? 'block' : 'none' }} className={styles.fetchError}>Произошла ошибка, попробуйте ещё раз</p>
+
+          <div className={styles.second__page} id="page">
+          {isLoading 
+          ? <div className={styles.loaderDiv}><span className={styles.loader} /></div>
+          : (
+            <ul className={styles.second__cardList}>
+              {data.map((card) => (
+                <div key={card.id} style={{ cursor: "pointer" }}>
+                  <Link to={`${card.id}`}>
+                    <img className={styles.second__cardImg} src={card.img} alt={card.name}/>
+                    <p className={styles.second__cardTitle}>{card.name}</p>
+                  </Link>
+                </div>
+              ))}
+            </ul>
+          )}
+        </div>
+
           {/* className hidden */}
           <div className={styles.details}></div>
           <p className={styles.second__searchNotfound}></p>
