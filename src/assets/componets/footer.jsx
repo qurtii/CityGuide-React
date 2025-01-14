@@ -4,7 +4,6 @@ import footerLogo from "../img/white_footer.svg";
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <hr className={styles.footer__line} />
       <div className={styles.footer_block}>
         <img src={footerLogo} alt="logo" className={styles.footer__logo} />
         <div className={styles.footer__row}>

@@ -6,6 +6,7 @@ import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginImport from "eslint-plugin-import";
 import pluginPrettier from "eslint-plugin-prettier";
 
+
 export default [
   {
     files: ["src/**/*.{js,jsx}"],
@@ -30,7 +31,7 @@ export default [
     },
     rules: {
       "react/react-in-jsx-scope": "off",
-      "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".jxx"] }],
+      "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".jxx"] }], // Добавлено .jxx
       "react/prop-types": "off",
       "import/prefer-default-export": "off",
       "prettier/prettier": "error",
@@ -41,9 +42,4 @@ export default [
       },
     },
   },
-  pluginJs.configs.recommended,
-  pluginReact.configs.recommended,
-  pluginReactHooks.configs.recommended,
-  pluginJsxA11y.configs.recommended,
-  pluginImport.configs.recommended,
 ];

@@ -1,7 +1,17 @@
+import { Footer } from "./footer";
+import { Header } from "./header";
+import styles from "../styles/admin.module.scss";
+
 export function Adminpage() {
   return (
     <>
-      <h1>this admin page</h1>
+      <Header />
+      <div className={styles.div}>
+        <form>
+          <h2>Авторизация</h2>
+        </form>
+      </div>
+      <Footer />
     </>
   );
 }

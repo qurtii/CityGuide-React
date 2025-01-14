@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import sortIcon from "../img/sort.svg";
 import { Link } from "react-router-dom";
 import { usePosts } from "../hooks/usePosts.js";
+import { useFiltres } from "../hooks/useFiltres.js";
 
 const isAuth = true;
 
@@ -17,20 +18,24 @@ export function Attractions() {
     return <span>Error: {error.message}</span>;
   }
 
-  const [openFuncList, setOpenFuncList] = useState("none")
+  const [openFuncList, setOpenFuncList] = useState("none");
 
-  const [filters, setFilters] = useState(new Set())
+  const { uniqueFilters } = useFiltres(isSuccess, data);
+
+  const funcList = useRef(null);
+
+  const [firstOption, setFirstOption] = useState("block");
+  const [secondOption, setSecondOption] = useState("block");
+  const [thirdOption, setThirdOption] = useState("block");
   useEffect(() => {
-    if (isSuccess && data) {
-      const uniqFiltersType = new Set()
-      data.forEach((item) => {
-        uniqFiltersType.add(item.type)
-      });
-      setFilters(uniqFiltersType)
-    }
-  }, [isSuccess, data]);
-  const uniqueFilters = Array.from(filters)
-  
+    funcList.current.addEventListener("click", function (event) {
+      // if (event.target.textContent  === 'Популярность'){
+      //   secondOption === "block" ? setSecondOption("none") : setSecondOption("block")
+      //   thirdOption === "block" ? setThirdOption("none") : setThirdOption("block")
+      // }
+    });
+  }, []);
+
   return (
     <>
       <Header />
@@ -50,16 +55,27 @@ export function Attractions() {
                 <p className={styles.second__functionalClear}>&#10006;</p>
               </div>
               <img
-                onClick={() => openFuncList === 'none' ? setOpenFuncList('block') : setOpenFuncList('none')}
+                onClick={() =>
+                  openFuncList === "none"
+                    ? setOpenFuncList("block")
+                    : setOpenFuncList("none")
+                }
                 src={sortIcon}
                 alt="img"
                 className={styles.second__functionalSort}
               />
             </div>
-            <div style={{display: openFuncList }} className={styles.second__functionalList}>
+            <div
+              ref={funcList}
+              style={{ display: openFuncList }}
+              className={styles.second__functionalList}
+            >
               <p className={styles.second__functionalTitle}>Сортировка</p>
               <div className={styles.second__functionalSorting}>
-                <div className={styles.second__functionalSorting1}>
+                <div
+                  style={{ display: firstOption }}
+                  className={styles.second__functionalSorting1}
+                >
                   <input
                     type="checkbox"
                     className={styles.second__functionalSortcb}
@@ -67,7 +83,10 @@ export function Attractions() {
                   {/* class second__functional-text1 */}
                   <p className={styles.second__functionalText}>Популярность</p>
                 </div>
-                <div className={styles.second__functionalSorting2}>
+                <div
+                  style={{ display: secondOption }}
+                  className={styles.second__functionalSorting2}
+                >
                   <input
                     type="checkbox"
                     className={styles.second__functionalSortcb}
@@ -75,7 +94,10 @@ export function Attractions() {
                   {/* class second__functional-text2 */}
                   <p className={styles.second__functionalText}>От А до Я</p>
                 </div>
-                <div className={styles.second__functionalSorting3}>
+                <div
+                  style={{ display: thirdOption }}
+                  className={styles.second__functionalSorting3}
+                >
                   <input
                     type="checkbox"
                     className={styles.second__functionalSortcb}
@@ -88,15 +110,16 @@ export function Attractions() {
               <p className={styles.second__functionalTitle}>Фильтрация</p>
               <div className={styles.second__functionalFilters}>
                 {uniqueFilters.map((filter) => (
-                  <div className={styles.second__functionalFilter} id={filter.type} key={filter}>
-                    <input type="checkbox" id={filter}
-                    />
-                    <label htmlFor={filter}>{filter}</label> 
+                  <div
+                    className={styles.second__functionalFilter}
+                    id={filter.type}
+                    key={filter}
+                  >
+                    <input type="checkbox" id={filter} />
+                    <label htmlFor={filter}>{filter}</label>
                   </div>
                 ))}
               </div>
-
-
             </div>
           </div>
 
