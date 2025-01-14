@@ -5,26 +5,32 @@ import styles from "../styles/attractions.module.scss";
 import { useEffect, useRef, useState } from "react";
 
 import sortIcon from "../img/sort.svg";
-import { Link, useLocation } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import { usePosts } from "../hooks/usePosts.js";
 
-const isAuth = true
+const isAuth = true;
 
 export function Attractions() {
+  const { data, error, isLoading, isError, isSuccess } = usePosts(isAuth);
 
-  const { data, error, isLoading, isError, isSuccess } = usePosts(isAuth)
+  if (isError) {
+    return <span>Error: {error.message}</span>;
+  }
 
-  const openFunks = useRef(null);
-  const openMenu = () => {
-    if (openFunks.current.classList.contains(styles.closedList)) {
-      openFunks.current.classList.remove(styles.closedList);
-    } else {
-      openFunks.current.classList.add(styles.closedList);
+  const [openFuncList, setOpenFuncList] = useState("none")
+
+  const [filters, setFilters] = useState(new Set())
+  useEffect(() => {
+    if (isSuccess && data) {
+      const uniqFiltersType = new Set()
+      data.forEach((item) => {
+        uniqFiltersType.add(item.type)
+      });
+      setFilters(uniqFiltersType)
     }
-  };
-
+  }, [isSuccess, data]);
+  const uniqueFilters = Array.from(filters)
+  
   return (
     <>
       <Header />
@@ -44,16 +50,13 @@ export function Attractions() {
                 <p className={styles.second__functionalClear}>&#10006;</p>
               </div>
               <img
-                onClick={openMenu}
+                onClick={() => openFuncList === 'none' ? setOpenFuncList('block') : setOpenFuncList('none')}
                 src={sortIcon}
                 alt="img"
                 className={styles.second__functionalSort}
               />
             </div>
-            <div
-              ref={openFunks}
-              className={`${styles.second__functionalList} ${styles.closedList}`}
-            >
+            <div style={{display: openFuncList }} className={styles.second__functionalList}>
               <p className={styles.second__functionalTitle}>Сортировка</p>
               <div className={styles.second__functionalSorting}>
                 <div className={styles.second__functionalSorting1}>
@@ -81,32 +84,51 @@ export function Attractions() {
                   <p className={styles.second__functionalText}>От Я до А</p>
                 </div>
               </div>
+
               <p className={styles.second__functionalTitle}>Фильтрация</p>
-              <div
-                className={styles.second__functionalFilters}
-                id="filters"
-              ></div>
+              <div className={styles.second__functionalFilters}>
+                {uniqueFilters.map((filter) => (
+                  <div className={styles.second__functionalFilter} id={filter.type} key={filter}>
+                    <input type="checkbox" id={filter}
+                    />
+                    <label htmlFor={filter}>{filter}</label> 
+                  </div>
+                ))}
+              </div>
+
+
             </div>
           </div>
 
-          <p style={{ display: isError ? 'block' : 'none' }} className={styles.fetchError}>Произошла ошибка, попробуйте ещё раз</p>
+          <p
+            style={{ display: isError ? "block" : "none" }}
+            className={styles.fetchError}
+          >
+            Произошла ошибка, попробуйте ещё раз
+          </p>
 
           <div className={styles.second__page} id="page">
-          {isLoading 
-          ? <div className={styles.loaderDiv}><span className={styles.loader} /></div>
-          : (
-            <ul className={styles.second__cardList}>
-              {data.map((card) => (
-                <div key={card.id} style={{ cursor: "pointer" }}>
-                  <Link to={`${card.id}`}>
-                    <img className={styles.second__cardImg} src={card.img} alt={card.name}/>
-                    <p className={styles.second__cardTitle}>{card.name}</p>
-                  </Link>
-                </div>
-              ))}
-            </ul>
-          )}
-        </div>
+            {isLoading ? (
+              <div className={styles.loaderDiv}>
+                <span className={styles.loader} />
+              </div>
+            ) : (
+              <ul className={styles.second__cardList}>
+                {data.map((card) => (
+                  <div key={card.id} style={{ cursor: "pointer" }}>
+                    <Link to="/attractions/id">
+                      <img
+                        className={styles.second__cardImg}
+                        src={card.img}
+                        alt={card.name}
+                      />
+                      <p className={styles.second__cardTitle}>{card.name}</p>
+                    </Link>
+                  </div>
+                ))}
+              </ul>
+            )}
+          </div>
 
           {/* className hidden */}
           <div className={styles.details}></div>

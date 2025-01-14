@@ -11,13 +11,23 @@ export function Header() {
   const [backgroundColor, setBackgroundColor] = useState("#000");
   const [homeDisplay, setHomeDisplay] = useState("none");
   const [visitDisplay, setVisitDisplay] = useState("block");
+  const [firstButton, setFirstButton] = useState("КОНТАКТЫ");
+
+  const [openBurger, setOpenBurger] = useState("none");
 
   useEffect(() => {
     if (location.pathname === "/") {
       setBackgroundColor("rgba(0, 0, 0, 0.66)");
       setHomeDisplay("none");
       setVisitDisplay("block");
-    } else {
+    }
+    if (location.pathname === "/contact") {
+      setBackgroundColor("#111111");
+      setHomeDisplay("none");
+      setVisitDisplay("block");
+      setFirstButton("ГЛАВНАЯ");
+    }
+    if (location.pathname === "/attractions") {
       setBackgroundColor("#111111");
       setHomeDisplay("block");
       setVisitDisplay("none");
@@ -37,14 +47,21 @@ export function Header() {
                 className={styles.header__navLogo}
               />{" "}
             </Link>
-            <div className={styles.header__burger} id="open_burger">
+            <div
+              onClick={() => setOpenBurger("flex")}
+              className={styles.header__burger}
+              id="open_burger"
+            >
               <img src={burger} alt="burger" />
             </div>
             <ul className={styles.header__ul}>
               {/* ЗАМЕНИТЬ НА LINK */}
               <li>
-                <Link to="/contact" className={styles.header__li}>
-                  КОНТАКТЫ
+                <Link
+                  to={location.pathname === "/contact" ? "/" : "/contact"}
+                  className={styles.header__li}
+                >
+                  {firstButton}
                 </Link>
               </li>
               <li style={{ display: homeDisplay }}>
@@ -63,9 +80,17 @@ export function Header() {
               </li>
             </ul>
 
-            <div className={styles.modal} id="modal_burger">
+            <div
+              style={{ display: openBurger }}
+              className={styles.modal}
+              id="modal_burger"
+            >
               <div className={styles.modal__window}>
-                <p className={styles.modal__burger} id="burger_close">
+                <p
+                  onClick={() => setOpenBurger("none")}
+                  className={styles.modal__burger}
+                  id="burger_close"
+                >
                   &#10006;
                 </p>
                 <ul className={styles.modal__ul}>

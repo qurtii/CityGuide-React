@@ -6,8 +6,11 @@ import styles from "../styles/contact.module.scss";
 import tgIcon from "../img/tg.png";
 import vkIcon from "../img/vk.svg";
 import ytIcon from "../img/youtube.svg";
+import { useState } from "react";
 
 export function Contact() {
+  const [openModal, setOpenModal] = useState("none");
+
   return (
     <>
       <Header />
@@ -28,7 +31,12 @@ export function Contact() {
                 <div className={styles.main__phone1}>+7 (973)-230-21-22</div>
                 <div className={styles.main__phone2}>+7 (906)-170-41-42</div>
               </div>
-              <button id="open" className={styles.main__button} type="button">
+              <button
+                onClick={() => setOpenModal("flex")}
+                id="open"
+                className={styles.main__button}
+                type="button"
+              >
                 Связаться с нами
               </button>
             </div>
@@ -40,11 +48,20 @@ export function Contact() {
             </div>
 
             {/* modal window */}
-            <div className={styles.main__modal} id="modal">
+            <div
+              style={{ display: openModal }}
+              className={styles.main__modal}
+              id="modal"
+            >
               <div className={styles.main__modalWindow}>
                 <div className={styles.main__modalHeader}>
                   <h1 className={styles.main__modalTtitle}>Связаться с нами</h1>
-                  <span className={styles.main__modalClose}>&times;</span>
+                  <span
+                    onClick={() => setOpenModal("none")}
+                    className={styles.main__modalClose}
+                  >
+                    &times;
+                  </span>
                 </div>
                 <form action="" className={styles.main__modalForm}>
                   <div className={styles.main__modalFio}>

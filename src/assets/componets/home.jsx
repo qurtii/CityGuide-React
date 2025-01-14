@@ -20,7 +20,6 @@ export function Home() {
 
   useEffect(() => {
     if (!slides.current) return;
-
     const slideElements = Array.from(slides.current.children);
 
     function showSlides(n) {

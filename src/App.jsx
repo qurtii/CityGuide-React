@@ -7,6 +7,7 @@ import { Home } from "./assets/componets/home.jsx";
 import { Attractions } from "./assets/componets/attractions.jsx";
 import { Contact } from "./assets/componets/contact.jsx";
 import { Showplace } from "./assets/componets/showPlace.jsx";
+import { Adminpage } from "./assets/componets/adminpage.jsx";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/attractions" element={<Attractions />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/attractions/id" element={<Showplace />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Adminpage />} />
       </Routes>
     </BrowserRouter>
   );
