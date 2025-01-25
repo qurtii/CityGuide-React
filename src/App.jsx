@@ -11,7 +11,7 @@ import { Adminpage } from "./assets/componets/adminpage.jsx";
 
 function App() {
   return (
-    <BrowserRouter basename="CityGuide-React">
+    <HashRouter basename="CityGuide-React">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/attractions" element={<Attractions />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Adminpage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
