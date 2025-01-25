@@ -1,22 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 
-import './index.css'
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import App from './App.jsx'
-import { Home } from './assets/componets/home.jsx';
+import "./index.css";
 
+import App from "./App.jsx";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(root).render(
-  // <BrowserRouter>
-  //   <Routes>
-  //     <Route path="/" element={<Home />} />
-  //   </Routes>
-  // </BrowserRouter>
-  <>
-    <App />
-  </>
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  </React.StrictMode>,
 );

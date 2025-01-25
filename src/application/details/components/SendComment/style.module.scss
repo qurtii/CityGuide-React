@@ -1,0 +1,46 @@
+.main {
+    &__reviews {
+        display: flex;
+
+        &_title {
+            margin-top: 120px;
+        }
+
+        &_inputs {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &_input {
+            padding: 5px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+
+            &:focus {
+                border: none;
+            }
+        }
+
+        &_line {
+            margin-top: 5px;
+            max-width: 500px;
+        }
+
+        &_buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 5px;
+            width: auto;
+        }
+
+        &_button {
+            padding: 3px;
+            background: none;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+    }
+}

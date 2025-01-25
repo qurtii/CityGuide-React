@@ -69,7 +69,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .main {
-  background: url(../../../public/background.jpg) no-repeat center/cover;
+  background: url(../img/background.jpg) no-repeat center/cover;
   background-color: rgba(0, 0, 0, 0.25);
   height: 957px;
   font-family: Montserrat;
@@ -393,7 +393,7 @@ body::-webkit-scrollbar-thumb:hover {
   gap: 20px;
   margin: 0 auto;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -480,4 +480,9 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 16px;
     width: 110px;
   }
+}
+
+.visiable {
+  opacity: 1;
+  transform: translateY(0);
 }

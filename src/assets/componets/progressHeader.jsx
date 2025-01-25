@@ -1,24 +1,34 @@
-import logo from "../../../public/header_logo.svg";
-import burger from "../../../public/burger.svg";
+import logo from "../img/header_logo.svg";
+import burger from "../img/burger.svg";
 
 import { Link } from "react-router-dom";
 
-import styles from "../styles/header.module.scss";
+import styles from "../styles/attractions.module.scss";
 
-export function Header() {
+export function ProgressHeader() {
   return (
     <>
       <header className={styles.header}>
         <div className={styles.container}>
           <nav className={styles.header__nav}>
-            <Link to="/"> <img src={logo} alt="logo" className={styles.header__navLogo} /> </Link>
+            <Link to="/">
+              <img src={logo} alt="logo" className={styles.header__navLogo} />
+            </Link>
             <div className={styles.header__burger} id="open_burger">
               <img src={burger} alt="burger" />
             </div>
             <ul className={styles.header__ul}>
               {/* ЗАМЕНИТЬ НА LINK */}
-              <li><Link to="/contact" className={styles.header__li}>КОНТАКТЫ</Link></li>
-              <li><Link to="/attractions" className={styles.header__liBtn}>ЧТО ПОСЕТИТЬ</Link></li>
+              <li>
+                <Link to="/contact" className={styles.header__li}>
+                  КОНТАКТЫ
+                </Link>
+              </li>
+              <li>
+                <Link to="/attractions" className={styles.header__liBtn}>
+                  ЧТО ПОСЕТИТЬ
+                </Link>
+              </li>
             </ul>
 
             <div className={styles.modal} id="modal_burger">
@@ -39,6 +49,11 @@ export function Header() {
             </div>
           </nav>
         </div>
+        <progress
+          value="0"
+          max="100"
+          className={styles.header__readBar}
+        ></progress>
       </header>
     </>
   );

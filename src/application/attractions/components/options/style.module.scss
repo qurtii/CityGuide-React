@@ -1,0 +1,199 @@
+.second {
+    &__functional {
+
+
+        &List {
+            position: absolute;
+            z-index: 2;
+            top: 3%;
+            left: 20%;
+            background: linear-gradient(148deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(230, 230, 230, 1) 77%,
+                    rgba(255, 255, 255, 1) 100%);
+            box-shadow: 5px 5px 18px 11px rgba(0, 0, 0, 0.3);
+            width: 385px;
+            padding: 16px;
+            border-radius: 7px;
+            overflow: hidden;
+            gap: 4px;
+            flex-direction: column;
+            transition: max-height 0.35s ease-out;
+            margin-bottom: 45px;
+            animation: openList 0.35s;
+
+            @keyframes openList {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: 900px) {
+                font-size: 13px;
+            }
+        }
+
+        &Sorting {
+            font-size: 16.5px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            @media (max-width: 350px) {
+                gap: 10px;
+            }
+
+            &1,
+            &2,
+            &3 {
+                display: flex;
+                background-color: #d8d7d5;
+                padding: 3px 5px;
+                border-radius: 7px;
+                gap: 5px;
+                align-items: center;
+                user-select: none;
+
+                @media (max-width: 930px) {
+                    font-size: 18px;
+                }
+
+                @media (max-width: 800px) {
+                    font-size: 16.5px;
+                }
+
+                @media (max-width: 520px) {
+                    font-size: 15.5px;
+                }
+
+                @media (max-width: 350px) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &Title {
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-size: 19px;
+            font-weight: 600;
+
+            @media (max-width: 930px) {
+                font-size: 18px;
+            }
+
+            @media (max-width: 800px) {
+                font-size: 16.5px;
+            }
+
+            @media (max-width: 520px) {
+                font-size: 15.5px;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 14px;
+            }
+        }
+
+        &Filter {
+            display: flex;
+            gap: 7px;
+            padding: 0 5px;
+            width: fit-content;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #dadada;
+                border-radius: 4px;
+            }
+        }
+
+        &Sortcb {
+            cursor: pointer;
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &-checkbox {
+            width: 15px;
+
+            @media (max-width: 400px) {
+                width: 12px;
+            }
+
+            @media (max-width: 300px) {
+                width: 10px;
+            }
+        }
+
+        &Text {
+            cursor: pointer;
+            font-size: 15px;
+
+            @media (max-width: 930px) {
+                font-size: 13px;
+            }
+
+            @media (max-width: 520px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 10px;
+            }
+
+            @media (max-width: 330px) {
+                font-size: 9.5px;
+            }
+        }
+    }
+}
+
+.second {
+    &__functional {
+
+        &Sorting1,
+        &Sorting2,
+        &Sorting3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            &:hover {
+                border-radius: 7px;
+            }
+        }
+
+        &Sortcb {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+
+            &.active {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+        }
+
+        &SortingSelected {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f0f0f0;
+                border-radius: 7px;
+            }
+        }
+    }
+}

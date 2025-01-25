@@ -1,26 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
-import { createRoot } from 'react-dom/client'
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import { Home } from './assets/componets/home.jsx';
-import { Attractions } from "./assets/componets/attractions.jsx";
-import { Contact } from "./assets/componets/contact.jsx";
-
-
-
+import { Home } from "./application/home/home.jsx";
+import { Attractions } from "./application/attractions/attractions.jsx";
+import { Contact } from "./application/contact/Contact.jsx";
+import { Details } from "./application/details/details.jsx";
+import { Adminpage } from "./assets/componets/adminpage.jsx";
 
 function App() {
-
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/CityGuide-React">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/attractions" element={<Attractions />} />
+        <Route path="/attractions/:id" element={<Details />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Adminpage />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

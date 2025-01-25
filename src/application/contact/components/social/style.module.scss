@@ -1,0 +1,210 @@
+.container {
+    max-width: 1368px;
+    margin: 0 auto;
+    padding-left: 74px;
+    padding-right: 74px;
+
+    @media (max-width: 650px) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @media (max-width: 550px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+}
+
+.second {
+    &__title {
+        font-family: Montserrat;
+        font-size: 55px;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 177px;
+
+        @media (max-width: 1160px) {
+            font-size: 45px;
+        }
+
+        @media (max-width: 1080px) {
+            font-size: 37px;
+        }
+
+        @media (max-width: 940px) {
+            font-size: 31px;
+        }
+
+        @media (max-width: 800px) {
+            font-size: 29px;
+        }
+
+    }
+
+    &__row {
+        margin-top: 100px;
+        display: flex;
+        gap: 65px;
+        justify-content: center;
+
+        @media (max-width: 1160px) {
+            gap: 55px;
+        }
+
+        @media (max-width: 940px) {
+            margin-top: 75px;
+            gap: 45px;
+        }
+    }
+
+    &__icon1 {
+        width: 115px;
+        height: 115px;
+        background-color: #D0D0D0;
+        border-radius: 10px;
+        padding: 13px;
+        align-items: center;
+        justify-content: center;
+        -webkit-transition: 0.1s;
+        -moz-transition: 0.1s;
+        -ms-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transition: 0.1s;
+            -moz-transition: 0.1s;
+            -ms-transition: 0.1s;
+            -o-transition: 0.1s;
+            transition: 0.1s;
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+
+        }
+
+        @media (max-width: 1160px) {
+            max-width: 105px;
+            max-height: 105px;
+        }
+
+        @media (max-width: 1080px) {
+            max-width: 90px;
+            max-height: 90px;
+        }
+
+        @media (max-width: 940px) {
+            max-width: 85px;
+            max-height: 85px;
+            padding: 7px;
+        }
+
+        @media (max-width: 940px) {
+            max-width: 75px;
+            max-height: 75px;
+        }
+    }
+
+    &__icon2 {
+        width: 115px;
+        height: 115px;
+        background-color: #D0D0D0;
+        border-radius: 10px;
+        padding: 13px;
+        align-items: center;
+        justify-content: center;
+        -webkit-transition: 0.1s;
+        -moz-transition: 0.1s;
+        -ms-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transition: 0.1s;
+            -moz-transition: 0.1s;
+            -ms-transition: 0.1s;
+            -o-transition: 0.1s;
+            transition: 0.1s;
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+
+        @media (max-width: 1160px) {
+            max-width: 105px;
+            max-height: 105px;
+        }
+
+        @media (max-width: 1080px) {
+            max-width: 90px;
+            max-height: 90px;
+        }
+
+        @media (max-width: 940px) {
+            max-width: 85px;
+            max-height: 85px;
+            padding: 11px;
+            padding-left: -5px;
+        }
+
+        @media (max-width: 940px) {
+            max-width: 75px;
+            max-height: 75px;
+        }
+    }
+
+    &__icon3 {
+        width: 115px;
+        height: 115px;
+        background-color: #D0D0D0;
+        border-radius: 10px;
+        padding: 13px;
+        align-items: center;
+        justify-content: center;
+        -webkit-transition: 0.1s;
+        -moz-transition: 0.1s;
+        -ms-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transition: 0.1s;
+            -moz-transition: 0.1s;
+            -ms-transition: 0.1s;
+            -o-transition: 0.1s;
+            transition: 0.1s;
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+
+        }
+
+        @media (max-width: 1160px) {
+            max-width: 105px;
+            max-height: 105px;
+        }
+
+        @media (max-width: 1080px) {
+            max-width: 90px;
+            max-height: 90px;
+        }
+
+        @media (max-width: 940px) {
+            max-width: 85px;
+            max-height: 85px;
+            padding: 9px;
+        }
+
+        @media (max-width: 940px) {
+            max-width: 75px;
+            max-height: 75px;
+        }
+    }
+}

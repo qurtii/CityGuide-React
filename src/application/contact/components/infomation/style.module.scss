@@ -1,0 +1,404 @@
+.main {
+    font-family: Montserrat;
+
+    &__title {
+        font-weight: 800;
+        font-size: 55px;
+        margin-top: 225px;
+        text-align: center;
+
+        @media (max-width: 1160px) {
+            font-size: 45px;
+        }
+
+        @media (max-width: 1080px) {
+            font-size: 34px;
+        }
+
+        @media (max-width: 940px) {
+            font-size: 31px;
+        }
+
+        @media (max-width: 650px) {
+            font-size: 27px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        gap: 115px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+
+        @media (max-width: 1160px) {
+            gap: 95px;
+        }
+
+        @media (max-width: 890px) {
+            gap: 45px;
+        }
+
+        @media (max-width: 830px) {
+            flex-direction: column;
+
+        }
+
+    }
+
+    &__textBlock {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 47px;
+        animation: show_text 1s forwards;
+        animation-iteration-count: 1;
+
+        @keyframes show_text {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 945px) {
+            gap: 35px;
+        }
+
+    }
+
+    &__textAdress {
+        max-width: 350px;
+        font-size: 32px;
+        font-weight: 600;
+        align-items: center;
+        gap: 20px;
+        display: flex;
+
+        &::before {
+            content: '';
+            background-image: url(../../../../assets/img/adress_icon.svg);
+            width: 70px;
+            height: 50px;
+        }
+
+        @media (max-width: 1160px) {
+            font-size: 28px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/adress_icon.svg);
+                width: 60px;
+                max-height: 50px;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            font-size: 24.5px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/adress_icon.svg);
+                width: 55px;
+                max-height: 50px;
+            }
+        }
+
+        @media (max-width: 940px) {
+            font-size: 21px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/adress_icon.svg);
+                width: 51px;
+                max-height: 50px;
+            }
+        }
+
+        @media (max-width: 830px) {
+            font-size: 21px;
+            max-width: 350px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/adress_icon.svg);
+                width: 44px;
+                max-height: 50px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            font-size: 18.7px;
+            max-width: 300px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/adress_icon.svg);
+                width: 49px;
+                max-height: 50px;
+            }
+        }
+
+
+    }
+
+    &__textTimework {
+        font-weight: 600;
+        font-size: 30px;
+        display: flex;
+        width: 327px;
+        gap: 15px;
+        align-items: center;
+
+        &::before {
+            content: '';
+            background-image: url(../../../../assets/img/time-icon.svg);
+            width: 90px;
+            height: 45px;
+        }
+
+        @media (max-width: 1160px) {
+            font-size: 28px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/time-icon.svg);
+                width: 85px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            font-size: 24.2px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/time-icon.svg);
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 940px) {
+            font-size: 21px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/time-icon.svg);
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 830px) {
+            font-size: 21px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/time-icon.svg);
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            font-size: 18.7px;
+            max-width: 270px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/time-icon.svg);
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+    }
+
+    &__time {
+        color: #000;
+
+        @media (max-width: 1080px) {
+            max-width: 230px;
+        }
+
+        @media (max-width: 550px) {
+            max-width: 190px;
+        }
+    }
+
+    &__numphone {
+        display: flex;
+        flex-direction: column;
+        font-weight: 800;
+        font-size: 30px;
+        color: #2268AA;
+
+
+    }
+
+    &__phone1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::before {
+            content: '';
+            background-image: url(../../../../assets/img/tel_icon.svg);
+            width: 22px;
+            height: 29px;
+        }
+
+        @media (max-width: 1160px) {
+            font-size: 28px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 22px;
+                height: 30.5px;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            font-size: 24.5px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 22px;
+                height: 30.5px;
+            }
+        }
+
+        @media (max-width: 940px) {
+            font-size: 21px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 22px;
+                height: 30.5px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            font-size: 21px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 22px;
+                height: 30.5px;
+            }
+        }
+    }
+
+    &__phone2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::before {
+            content: '';
+            background-image: url(../../../../assets/img/tel_icon.svg);
+            width: 22px;
+            height: 29px;
+        }
+
+        @media (max-width: 1160px) {
+            font-size: 28px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 21px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            font-size: 24.5px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 22px;
+                height: 30.5px;
+            }
+        }
+
+        @media (max-width: 940px) {
+            font-size: 21px;
+            max-width: 400px;
+
+            &::before {
+                content: '';
+                background-image: url(../../../../assets/img/tel_icon.svg);
+                width: 22px;
+                height: 30.5px;
+            }
+        }
+
+    }
+
+    &__button {
+        margin-top: 18px;
+        width: 235px;
+        font-size: 20px;
+        font-weight: 800;
+        border: none;
+        border-radius: 9px;
+        background-color: #1978E5;
+        color: #fff;
+        padding: 16px 13px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (max-width: 940px) {
+            font-size: 17px;
+            padding: 13px 10px;
+        }
+
+        @media (max-width: 800px) {
+            font-size: 16px;
+            padding: 10px 7px;
+            width: 185px;
+        }
+    }
+
+    &__mapBlock {
+        @media (max-width: 1100px) {
+            width: unset;
+            align-items: center;
+        }
+    }
+
+    &__map {
+        width: 600px;
+        height: 500px;
+
+        @media (max-width: 1100px) {
+            width: unset;
+        }
+    }
+}
