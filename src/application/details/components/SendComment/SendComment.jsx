@@ -20,7 +20,7 @@ export function SendComment({ data }) {
         {
           ...data,
           reviews: [...data.reviews, newReview],
-        }
+        },
       );
     },
     onSuccess: () => {

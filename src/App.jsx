@@ -9,12 +9,9 @@ import { Contact } from "./application/contact/Contact.jsx";
 import { Details } from "./application/details/details.jsx";
 import { Adminpage } from "./assets/componets/adminpage.jsx";
 
-
-
-
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/CityGuide-React">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/attractions" element={<Attractions />} />

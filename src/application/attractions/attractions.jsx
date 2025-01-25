@@ -93,9 +93,7 @@ export function Attractions() {
       const allData = filtredData.pages.flat();
       setDataNow(allData);
     }
-    return(
-      console.log("1")
-    )
+    return console.log("1");
   }, [filtredData]);
 
   useEffect(() => {
@@ -106,7 +104,7 @@ export function Attractions() {
           fetchNextPage();
         }
       },
-      { threshold: 1.0 }
+      { threshold: 1.0 },
     );
 
     if (observerRef.current) {

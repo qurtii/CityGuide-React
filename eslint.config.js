@@ -4,7 +4,7 @@ import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginImport from "eslint-plugin-import";
-// import pluginPrettier from "eslint-plugin-prettier";
+import pluginPrettier from "eslint-plugin-prettier";
 
 
 export default [
@@ -27,7 +27,7 @@ export default [
       "react-hooks": pluginReactHooks,
       "jsx-a11y": pluginJsxA11y,
       import: pluginImport,
-      // prettier: pluginPrettier,
+      prettier: pluginPrettier,
     },
     rules: {
       "react/react-in-jsx-scope": "off",

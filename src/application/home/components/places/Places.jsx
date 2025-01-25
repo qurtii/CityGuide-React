@@ -46,10 +46,10 @@ export function Places() {
     showSlides(slideIndex.current);
 
     const nextButton = document.querySelector(
-      `.${styles.third__sliderBtn}.next`
+      `.${styles.third__sliderBtn}.next`,
     );
     const prevButton = document.querySelector(
-      `.${styles.third__sliderBtn}.prev`
+      `.${styles.third__sliderBtn}.prev`,
     );
 
     if (nextButton && prevButton) {
