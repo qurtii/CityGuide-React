@@ -1,0 +1,84 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('../../assets/fonts/Montserrat-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('../../assets/fonts/Montserrat-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('../../assets/fonts/Montserrat-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('../../assets/fonts/Montserrat-SemiBold.ttf');
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  height: 100%;
+  max-width: 1368px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @media (max-width: 410px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+body {
+  margin: 0 auto;
+
+  &::-webkit-scrollbar {
+    background: #303030;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+
+    background: none;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 3px;
+    background: #b4b4b4;
+    border-radius: 15px;
+
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    transition: all .3s ease;
+    background: #818181;
+  }
+}
+
+
+
+.visiable {
+  opacity: 1;
+  transform: translateY(0);
+}

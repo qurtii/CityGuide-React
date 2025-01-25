@@ -1,9 +1,9 @@
-import logo from "../img/header_logo.svg";
-import burger from "../img/burger.svg";
+import logo from "../../assets/img/header_logo.svg";
+import burger from "../../assets/img/burger.svg";
 
 import { Link, useLocation } from "react-router-dom";
 
-import styles from "../styles/header.module.scss";
+import styles from "./style.module.scss";
 import { useEffect, useRef, useState } from "react";
 
 export function Header() {

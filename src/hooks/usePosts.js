@@ -12,6 +12,6 @@ export function usePosts(isEnable) {
     select: (data) => data.data,
     enabled: isEnable,
   });
-
+  
   return { data, error, isLoading, isError, isSuccess };
 }

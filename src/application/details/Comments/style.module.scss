@@ -1,0 +1,11 @@
+.comments {
+    &__comment {
+        margin-top: 40px;
+    }
+
+    &__header {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+    }
+}

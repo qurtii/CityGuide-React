@@ -1,5 +1,5 @@
-import { Footer } from "./footer";
-import { Header } from "./header";
+import { Footer } from "../../components/footer/footer";
+import { Header } from "../../components/header/header";
 import styles from "../styles/admin.module.scss";
 
 export function Adminpage() {

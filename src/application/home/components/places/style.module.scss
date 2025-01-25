@@ -1,0 +1,158 @@
+.container {
+    height: 100%;
+    max-width: 1368px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    @media (max-width: 410px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.third {
+    margin: 0 auto;
+    font-family: Montserrat;
+
+    &__title {
+        padding-top: 100px;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 800;
+
+        @media (max-width: 1300px) {
+            font-size: 33px;
+        }
+
+        @media (max-width: 1250px) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 850px) {
+            font-size: 29px;
+        }
+
+        @media (max-width: 560px) {
+            font-size: 25.5px;
+        }
+
+        @media (max-width: 545px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 470px) {
+            font-size: 22.5px;
+        }
+
+        @media (max-width: 380px) {
+            font-size: 20px;
+        }
+    }
+
+    &__cardWrapper {
+        margin-top: 125px;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__slider {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin: 0 auto;
+        align-items: center;
+        opacity: 1;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+
+        &.visiable {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 350px) {
+            gap: 7px;
+        }
+    }
+
+
+    &__sliderBtn {
+        user-select: none;
+        cursor: pointer;
+        width: auto;
+        padding: 16px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 25px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 430px) {
+            font-size: 18px;
+            padding: 7px;
+        }
+
+    }
+
+
+    &__cardImg {
+        @media (max-width: 800px) {
+            width: 300px;
+        }
+
+        @media (max-width: 700px) {
+            width: 260px;
+        }
+
+        @media (max-width: 630px) {
+            width: 220px;
+        }
+
+        @media (max-width: 430px) {
+            width: 195px;
+        }
+
+    }
+
+    &__cardLink {
+        &:hover {
+            transition: all .3s ease;
+            transform: scale(1.02);
+        }
+    }
+
+    &__btn {
+        background-color: #3C96EA;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        border-radius: 9px;
+        padding: 10px;
+        align-items: center;
+        display: flex;
+        margin: 40px auto;
+        max-width: 150px;
+
+        &:hover {
+            transition: all .3s ease;
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 750px) {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 430px) {
+            padding: 7px;
+            font-size: 16px;
+            width: 110px;
+        }
+    }
+}

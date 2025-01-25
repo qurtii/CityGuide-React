@@ -77,13 +77,14 @@ li {
 
     &Header {
       display: flex;
-      gap: 7px;
+      gap: 1px;
     }
 
     &Search {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+
     }
 
     &Input {
@@ -92,10 +93,11 @@ li {
       color: #fff;
       background-color: #000;
       border: none;
-      border-radius: 7px;
+      // border-radius: 7px;
       font-size: 18px;
       padding: 15px;
       font-weight: 600;
+      border-radius: 7px 0px 0px 7px;
 
       @media (max-width: 1050px) {
         font-size: 15px;
@@ -122,17 +124,17 @@ li {
       cursor: pointer;
       color: #fff;
       position: absolute;
-      display: none;
       text-align: center;
       margin-right: 8px;
       user-select: none;
+
     }
 
     &Sort {
       background-color: #000;
-      width: 54px;
+      width: 52px;
       padding: 5px;
-      border-radius: 7px;
+      border-radius: 0px 7px 7px 0px;
       cursor: pointer;
 
       @media (max-width: 1050px) {
@@ -149,17 +151,14 @@ li {
     }
 
     &List {
-      display: none;
       position: absolute;
       z-index: 2;
       top: 3%;
       left: 20%;
-      background: linear-gradient(
-        148deg,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(230, 230, 230, 1) 77%,
-        rgba(255, 255, 255, 1) 100%
-      );
+      background: linear-gradient(148deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(230, 230, 230, 1) 77%,
+          rgba(255, 255, 255, 1) 100%);
       box-shadow: 5px 5px 18px 11px rgba(0, 0, 0, 0.3);
       width: 385px;
       padding: 16px;
@@ -175,6 +174,7 @@ li {
         from {
           opacity: 0;
         }
+
         to {
           opacity: 1;
         }
@@ -250,7 +250,14 @@ li {
     &Filter {
       display: flex;
       gap: 7px;
-      width: 10px;
+      padding: 0 5px;
+      width: fit-content;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #dadada;
+        border-radius: 4px;
+      }
     }
 
     &Sortcb {
@@ -272,7 +279,7 @@ li {
       }
     }
 
-    &-text {
+    &Text {
       cursor: pointer;
       font-size: 15px;
 
@@ -310,6 +317,7 @@ li {
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(360deg);
     }
@@ -323,6 +331,7 @@ li {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -461,6 +470,7 @@ li {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -588,6 +598,7 @@ li {
 }
 
 .loaderDiv {
+  margin: 20% auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -598,4 +609,31 @@ li {
   text-align: center;
   font-size: 19.5px;
   font-weight: 600;
+}
+
+
+
+
+*[tooltip]:hover::after {
+  content: attr(tooltip);
+  position: absolute;
+  top: 100%;
+  left: 70%;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 14px;
+  animation: showHover 0.3s;
+
+  @keyframes showHover {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 }
